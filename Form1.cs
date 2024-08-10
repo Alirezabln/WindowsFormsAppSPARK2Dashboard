@@ -41,6 +41,13 @@ namespace WindowsFormsAppSPARK2Dashboard
             }
         }
         #endregion
+
+        #region Handlers
+        private void Serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            return;
+        }
+        #endregion
         public Form1()
         {
             InitializeComponent();
@@ -58,17 +65,105 @@ namespace WindowsFormsAppSPARK2Dashboard
             ScanPort();
         }
 
+        private void connectButton_Click(object sender, EventArgs e)
+        {
+            if (!Serial.IsOpen)
+            {
+                try
+                {
+                    // Get user COM port selection
+                    Serial.PortName = portComboBox.Text;
+                }
+                catch
+                {
+                    MessageBox.Show("Error! No COM port Selected");
+                    return;
+                }
 
-        //private void OpenButton_Click(object sender, EventArgs e)
-        //{
-        //Send command to the Arduino to turn pin 13 on
-        //serialPort1.Write("A");
-        //}
+                // Get user baud rate selection
+                try
+                {
+                    Serial.BaudRate = Convert.ToInt32(baudRateComboBox.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Error! No Baud Rate Selected");
+                    return;
+                }
+                // Serial Port Configuration
+                Serial.Parity = Parity.None;
+                Serial.StopBits = StopBits.One;
+                Serial.DataBits = 8;
+                Serial.Handshake = Handshake.None;
+                Serial.ReceivedBytesThreshold = 1;
+                Serial.WriteTimeout = 30000;
 
-        //private void closeButton_Click(object sender, EventArgs e)
-        //{
-        // Send command to the Arduino to turn pin 13 off
-        // serialPort1.Write("a");
-        //}
+            }
+            if (!Serial.IsOpen)
+            {
+                try
+                {
+                    Serial.Open();
+                }
+                catch
+                {
+                    MessageBox.Show("Error! The COM port is not accessible");
+                    return;
+                }
+            }
+            if (Serial.IsOpen)
+            {
+                connectButton.Enabled = false;
+                connectButton.Visible = false;
+                portComboBox.Enabled = false;
+                baudRateComboBox.Enabled = false;
+                dissconnectButton.Enabled = true;
+                ScanPortButton.Enabled = false;
+
+                // Add a handler to the DataReceived event
+                Serial.DataReceived += new SerialDataReceivedEventHandler(Serial_DataReceived);
+            }
+        }
+
+        private void dissconnectButton_Click(object sender, EventArgs e)
+        {
+            //if user clicks disconnect button
+            if (Serial.IsOpen)
+            {
+                Serial.Close();
+            }
+            connectButton.Enabled = true;
+            connectButton.Visible = true;
+            dissconnectButton.Enabled = false;
+            dissconnectButton.Visible = true;
+            portComboBox.Enabled = true;
+            baudRateComboBox.Enabled = true;
+            ScanPortButton.Enabled = true;
+
+            return;
+        }
+
+
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+            //Send command to the Arduino to turn pin 13 on
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("A");
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
+        }
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            // Send command to the Arduino to turn pin 13 off
+            Serial.Write("a");
+        }
+
     }
 }
