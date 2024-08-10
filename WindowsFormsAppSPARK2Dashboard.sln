@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppSPARK2Dashboard", "WindowsFormsAppSPARK2Dashboard.csproj", "{3932ACDA-34B9-4A45-BF9C-4481E18E1D6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3932ACDA-34B9-4A45-BF9C-4481E18E1D6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3932ACDA-34B9-4A45-BF9C-4481E18E1D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3932ACDA-34B9-4A45-BF9C-4481E18E1D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3932ACDA-34B9-4A45-BF9C-4481E18E1D6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A22EA3F-2C85-491B-B9F7-1E1B283EB24C}
+	EndGlobalSection
+EndGlobal
