@@ -1,4 +1,4 @@
-﻿//SEDS Dashboard for SPARK 2
+﻿//SEDS Dashboard for SPARK 2 
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -133,6 +133,8 @@ namespace WindowsFormsAppSPARK2Dashboard
             {
                 Serial.Close();
             }
+
+            // Enable and disable buttons
             connectButton.Enabled = true;
             connectButton.Visible = true;
             dissconnectButton.Enabled = false;
