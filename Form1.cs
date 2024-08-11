@@ -1,4 +1,4 @@
-﻿//SEDS Dashboard for SPARK 2 
+﻿//SEDS Dashboard for SPARK 2 SEDS
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
