@@ -1,4 +1,5 @@
-﻿using System;
+﻿//SEDS Dashboard for SPARK 2
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -162,8 +163,17 @@ namespace WindowsFormsAppSPARK2Dashboard
         private void closeButton_Click(object sender, EventArgs e)
         {
             // Send command to the Arduino to turn pin 13 off
-            Serial.Write("a");
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("a");
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
         }
-
     }
 }
