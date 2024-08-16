@@ -147,7 +147,7 @@ namespace WindowsFormsAppSPARK2Dashboard
         }
 
 
-        private void OpenButton_Click(object sender, EventArgs e)
+        private void sol1Open_Click(object sender, EventArgs e)
         {
             //Send command to the Arduino to turn pin 13 on
             if (Serial != null)
@@ -155,6 +155,11 @@ namespace WindowsFormsAppSPARK2Dashboard
                 if (Serial.IsOpen)
                 {
                     Serial.Write("A");
+                    Sol1Close.Visible = true;
+                    Sol1Close.Enabled = true;
+                    Sol1Open.Visible = false;
+                    Sol1Open.Enabled = false;
+
                 }
                 else
                 {
@@ -162,7 +167,7 @@ namespace WindowsFormsAppSPARK2Dashboard
                 }
             }
         }
-        private void closeButton_Click(object sender, EventArgs e)
+        private void sol1close_Click(object sender, EventArgs e)
         {
             // Send command to the Arduino to turn pin 13 off
             if (Serial != null)
@@ -170,6 +175,133 @@ namespace WindowsFormsAppSPARK2Dashboard
                 if (Serial.IsOpen)
                 {
                     Serial.Write("a");
+                    Sol1Close.Visible = false;
+                    Sol1Close.Enabled = false;
+                    Sol1Open.Visible = true;
+                    Sol1Open.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
+        }
+
+        private void sol2Open_Click(object sender, EventArgs e)
+        {
+            //Send command to the Arduino to turn pin 12 on
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("B");
+                    sol2Close.Visible = true;
+                    sol2Close.Enabled = true;
+                    sol2Open.Visible = false;
+                    sol2Open.Enabled = false;
+
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
+        }
+
+        private void sol2Close_Click(object sender, EventArgs e)
+        {
+            // Send command to the Arduino to turn pin 12 off
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("b");
+                    sol2Close.Visible = false;
+                    sol2Close.Enabled = false;
+                    sol2Open.Visible = true;
+                    sol2Open.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
+        }
+
+        private void sol3Open_Click(object sender, EventArgs e)
+        {
+            //Send command to the Arduino to turn pin 11 on
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("C");
+                    sol3Close.Visible = true;
+                    sol3Close.Enabled = true;
+                    sol3Open.Visible = false;
+                    sol3Open.Enabled = false;
+
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
+        }
+
+        private void sol3Close_Click(object sender, EventArgs e)
+        {
+            // Send command to the Arduino to turn pin 11 off
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("c");
+                    sol3Close.Visible = false;
+                    sol3Close.Enabled = false;
+                    sol3Open.Visible = true;
+                    sol3Open.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
+        }
+
+        private void sol4Open_Click(object sender, EventArgs e)
+        {
+            //Send command to the Arduino to turn pin 10 on
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("D");
+                    sol4Close.Visible = true;
+                    sol4Close.Enabled = true;
+                    sol4Open.Visible = false;
+                    sol4Open.Enabled = false;
+
+                }
+                else
+                {
+                    MessageBox.Show("Error! The COM port is not open");
+                }
+            }
+        }
+
+        private void sol4Close_Click(object sender, EventArgs e)
+        {
+            // Send command to the Arduino to turn pin 13 off
+            if (Serial != null)
+            {
+                if (Serial.IsOpen)
+                {
+                    Serial.Write("d");
+                    sol4Close.Visible = false;
+                    sol4Close.Enabled = false;
+                    sol4Open.Visible = true;
+                    sol4Open.Enabled = true;
                 }
                 else
                 {

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.OpenButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
+            this.Sol1Open = new System.Windows.Forms.Button();
+            this.Sol1Close = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.baudRateComboBox = new System.Windows.Forms.ComboBox();
             this.baudRateLabel = new System.Windows.Forms.Label();
@@ -39,30 +39,46 @@
             this.connectButton = new System.Windows.Forms.Button();
             this.dissconnectButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.valvePanel = new System.Windows.Forms.Label();
+            this.sol2Open = new System.Windows.Forms.Button();
+            this.sol3Open = new System.Windows.Forms.Button();
+            this.sol4Open = new System.Windows.Forms.Button();
+            this.sol2Close = new System.Windows.Forms.Button();
+            this.sol3Close = new System.Windows.Forms.Button();
+            this.sol4Close = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // OpenButton
+            // Sol1Open
             // 
-            this.OpenButton.Location = new System.Drawing.Point(47, 50);
-            this.OpenButton.Name = "OpenButton";
-            this.OpenButton.Size = new System.Drawing.Size(75, 23);
-            this.OpenButton.TabIndex = 0;
-            this.OpenButton.Text = "Open";
-            this.OpenButton.UseVisualStyleBackColor = true;
-            this.OpenButton.Click += new System.EventHandler(this.OpenButton_Click);
+            this.Sol1Open.BackColor = System.Drawing.Color.Green;
+            this.Sol1Open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sol1Open.ForeColor = System.Drawing.Color.White;
+            this.Sol1Open.Location = new System.Drawing.Point(81, 49);
+            this.Sol1Open.Name = "Sol1Open";
+            this.Sol1Open.Size = new System.Drawing.Size(178, 28);
+            this.Sol1Open.TabIndex = 0;
+            this.Sol1Open.Text = "Open";
+            this.Sol1Open.UseVisualStyleBackColor = false;
+            this.Sol1Open.Click += new System.EventHandler(this.sol1Open_Click);
             // 
-            // closeButton
+            // Sol1Close
             // 
-            this.closeButton.Location = new System.Drawing.Point(159, 50);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(75, 23);
-            this.closeButton.TabIndex = 1;
-            this.closeButton.Text = "Close";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.Sol1Close.BackColor = System.Drawing.Color.Red;
+            this.Sol1Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Sol1Close.ForeColor = System.Drawing.Color.White;
+            this.Sol1Close.Location = new System.Drawing.Point(81, 49);
+            this.Sol1Close.Name = "Sol1Close";
+            this.Sol1Close.Size = new System.Drawing.Size(178, 28);
+            this.Sol1Close.TabIndex = 1;
+            this.Sol1Close.Text = "Close";
+            this.Sol1Close.UseVisualStyleBackColor = false;
+            this.Sol1Close.Click += new System.EventHandler(this.sol1close_Click);
             // 
             // panel1
             // 
@@ -160,13 +176,63 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.valvePanel);
-            this.panel2.Controls.Add(this.closeButton);
-            this.panel2.Controls.Add(this.OpenButton);
+            this.panel2.Controls.Add(this.Sol1Open);
+            this.panel2.Controls.Add(this.Sol1Close);
+            this.panel2.Controls.Add(this.sol2Open);
+            this.panel2.Controls.Add(this.sol2Close);
+            this.panel2.Controls.Add(this.sol3Open);
+            this.panel2.Controls.Add(this.sol3Close);
+            this.panel2.Controls.Add(this.sol4Open);
+            this.panel2.Controls.Add(this.sol4Close);
             this.panel2.Location = new System.Drawing.Point(383, 13);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(271, 182);
+            this.panel2.Size = new System.Drawing.Size(271, 248);
             this.panel2.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Yellow;
+            this.label4.Location = new System.Drawing.Point(14, 193);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Sol 4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Green;
+            this.label3.Location = new System.Drawing.Point(14, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Sol 3";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Blue;
+            this.label2.Location = new System.Drawing.Point(14, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Sol 2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(14, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Sol 1";
             // 
             // valvePanel
             // 
@@ -177,6 +243,84 @@
             this.valvePanel.Size = new System.Drawing.Size(138, 13);
             this.valvePanel.TabIndex = 0;
             this.valvePanel.Text = "Manual Valve Control Panel";
+            // 
+            // sol2Open
+            // 
+            this.sol2Open.BackColor = System.Drawing.Color.Green;
+            this.sol2Open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sol2Open.ForeColor = System.Drawing.Color.White;
+            this.sol2Open.Location = new System.Drawing.Point(81, 92);
+            this.sol2Open.Name = "sol2Open";
+            this.sol2Open.Size = new System.Drawing.Size(178, 28);
+            this.sol2Open.TabIndex = 4;
+            this.sol2Open.Text = "Open";
+            this.sol2Open.UseVisualStyleBackColor = false;
+            this.sol2Open.Click += new System.EventHandler(this.sol2Open_Click);
+            // 
+            // sol3Open
+            // 
+            this.sol3Open.BackColor = System.Drawing.Color.Green;
+            this.sol3Open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sol3Open.ForeColor = System.Drawing.Color.White;
+            this.sol3Open.Location = new System.Drawing.Point(81, 140);
+            this.sol3Open.Name = "sol3Open";
+            this.sol3Open.Size = new System.Drawing.Size(178, 28);
+            this.sol3Open.TabIndex = 7;
+            this.sol3Open.Text = "Open";
+            this.sol3Open.UseVisualStyleBackColor = false;
+            this.sol3Open.Click += new System.EventHandler(this.sol3Open_Click);
+            // 
+            // sol4Open
+            // 
+            this.sol4Open.BackColor = System.Drawing.Color.Green;
+            this.sol4Open.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sol4Open.ForeColor = System.Drawing.Color.White;
+            this.sol4Open.Location = new System.Drawing.Point(81, 186);
+            this.sol4Open.Name = "sol4Open";
+            this.sol4Open.Size = new System.Drawing.Size(178, 28);
+            this.sol4Open.TabIndex = 10;
+            this.sol4Open.Text = "Open";
+            this.sol4Open.UseVisualStyleBackColor = false;
+            this.sol4Open.Click += new System.EventHandler(this.sol4Open_Click);
+            // 
+            // sol2Close
+            // 
+            this.sol2Close.BackColor = System.Drawing.Color.Red;
+            this.sol2Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sol2Close.ForeColor = System.Drawing.Color.White;
+            this.sol2Close.Location = new System.Drawing.Point(81, 92);
+            this.sol2Close.Name = "sol2Close";
+            this.sol2Close.Size = new System.Drawing.Size(178, 28);
+            this.sol2Close.TabIndex = 5;
+            this.sol2Close.Text = "Close";
+            this.sol2Close.UseVisualStyleBackColor = false;
+            this.sol2Close.Click += new System.EventHandler(this.sol2Close_Click);
+            // 
+            // sol3Close
+            // 
+            this.sol3Close.BackColor = System.Drawing.Color.Red;
+            this.sol3Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sol3Close.ForeColor = System.Drawing.Color.White;
+            this.sol3Close.Location = new System.Drawing.Point(81, 140);
+            this.sol3Close.Name = "sol3Close";
+            this.sol3Close.Size = new System.Drawing.Size(178, 28);
+            this.sol3Close.TabIndex = 8;
+            this.sol3Close.Text = "Close";
+            this.sol3Close.UseVisualStyleBackColor = false;
+            this.sol3Close.Click += new System.EventHandler(this.sol3Close_Click);
+            // 
+            // sol4Close
+            // 
+            this.sol4Close.BackColor = System.Drawing.Color.Red;
+            this.sol4Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sol4Close.ForeColor = System.Drawing.Color.White;
+            this.sol4Close.Location = new System.Drawing.Point(81, 186);
+            this.sol4Close.Name = "sol4Close";
+            this.sol4Close.Size = new System.Drawing.Size(178, 28);
+            this.sol4Close.TabIndex = 11;
+            this.sol4Close.Text = "Close";
+            this.sol4Close.UseVisualStyleBackColor = false;
+            this.sol4Close.Click += new System.EventHandler(this.sol4Close_Click);
             // 
             // Form1
             // 
@@ -197,8 +341,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button OpenButton;
-        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button Sol1Open;
+        private System.Windows.Forms.Button Sol1Close;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label ConnectionPortLabel;
         private System.Windows.Forms.Button ScanPortButton;
@@ -209,6 +353,16 @@
         private System.Windows.Forms.ComboBox baudRateComboBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label valvePanel;
+        private System.Windows.Forms.Button sol3Open;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button sol2Open;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button sol2Close;
+        private System.Windows.Forms.Button sol4Close;
+        private System.Windows.Forms.Button sol4Open;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button sol3Close;
     }
 }
 
